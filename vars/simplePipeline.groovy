@@ -5,7 +5,7 @@ def call(body) {
     body.delegate = pipelineParams
     body()
 
-    pipelineJob(params.JobName) {
+    pipeline {
 
         parameters {
             string( name: "Timeout", 	description: "Timeout in minutes") 
@@ -14,6 +14,12 @@ def call(body) {
 
         stages {
             stage('Greating') {
+                steps {
+                    script {
+                        currentBuild.displayName = "${params.JobName}"
+                        currentBuild.description = "${params.JobName} description."
+                    }
+                }
                 steps {
                     sh "echo 'Message: ${params.Message}'"
                 }
