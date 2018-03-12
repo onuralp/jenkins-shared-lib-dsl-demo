@@ -12,18 +12,16 @@ def call(body) {
             string( name: "Message",    description: "Message for console output" )
         }
 
-        stages {
-            stage('Greating') {
-                steps {
-                    script {
-                        currentBuild.displayName = "${params.JobName}"
-                        currentBuild.description = "${params.JobName} description."
-                    }
-                }
-                steps {
-                    sh "echo 'Message: ${params.Message}'"
+        stage('Greating') {
+            steps {
+                script {
+                    currentBuild.displayName = "${params.JobName}"
+                    currentBuild.description = "${params.JobName} description."
                 }
             }
-        }   
+            steps {
+                sh "echo 'Message: ${params.Message}'"
+            }
+        }         
     }
 }
