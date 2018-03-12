@@ -11,7 +11,7 @@ folder("${rootPath}/CI_Builds")
 folder("${rootPath}/CI_Builds/${version}")
 folder("${rootPath}/CI_Builds/${version}/SimplePipelines")
 
-// BVTs
+// Jobs
 simplePipeline {
     JobName = "Brother"
     Message = '1'

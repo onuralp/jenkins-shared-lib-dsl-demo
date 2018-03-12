@@ -18,5 +18,6 @@ def call(body) {
                     sh "echo 'Message: ${params.Message}'"
                 }
             }
+        }   
     }
 }
