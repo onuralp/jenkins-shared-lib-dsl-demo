@@ -8,18 +8,14 @@ def call(body) {
     pipeline {
 
         parameters {
-            string( name: "Timeout", 	description: "Timeout in minutes") 
-            string( name: "Message",    description: "Message for console output" )
+            string( name: "Name" ) 
+            string( name: "Message" )
         }
 
         stage('Greating') {
+            
             steps {
-                script {
-                    currentBuild.displayName = "${params.JobName}"
-                    currentBuild.description = "${params.JobName} description."
-                }
-            }
-            steps {
+                sh "echo 'Message: ${params.Name}'"
                 sh "echo 'Message: ${params.Message}'"
             }
         }         
