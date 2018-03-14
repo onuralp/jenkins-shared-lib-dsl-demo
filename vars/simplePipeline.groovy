@@ -7,9 +7,14 @@ def call(body) {
 
     pipeline {
 
-        parameters {
-            string( name: "Name" ) 
-            string( name: "Message" )
+        stages {
+            stage('Greating') {
+            
+                steps {
+                    echo("Name: ${params.Name}")
+                    echo("Message: ${params.Message}")
+                }
+            }
         }
     }
 }
