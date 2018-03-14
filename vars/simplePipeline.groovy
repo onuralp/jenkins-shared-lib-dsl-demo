@@ -5,18 +5,6 @@ def call(body) {
     body.delegate = pipelineParams
     body()
 
-    pipeline {
-
-        stages {
-            stage('Greating') {
-            
-                steps {
-                    echo("Name: ${params.Name}")
-                    echo("Message: ${params.Message}")
-                }
-            }
-        }
-    }
     
         node {
             
