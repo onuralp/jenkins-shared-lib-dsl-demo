@@ -11,13 +11,14 @@ def call(body) {
             string( name: "Name" ) 
             string( name: "Message" )
         }
-
-        stage('Greating') {
+        stages {
+            stage('Greating') {
             
-            steps {
-                sh "echo 'Message: ${params.Name}'"
-                sh "echo 'Message: ${params.Message}'"
+                steps {
+                    sh "echo 'Message: ${params.Name}'"
+                    sh "echo 'Message: ${params.Message}'"
+                }
             }
-        }         
+        }
     }
 }
