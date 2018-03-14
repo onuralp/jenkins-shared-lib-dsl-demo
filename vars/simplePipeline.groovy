@@ -17,4 +17,16 @@ def call(body) {
             }
         }
     }
+    
+        node {
+            
+            try {
+                stage ('Build') {
+                    sh "echo 'building ${params.Name} ...'"
+                }
+            } catch (err) {
+                currentBuild.result = 'FAILED'
+                throw err
+            }
+        }
 }
