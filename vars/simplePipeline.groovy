@@ -15,8 +15,8 @@ def call(body) {
             stage('Greating') {
             
                 steps {
-                    sh "echo 'Message: ${params.Name}'"
-                    sh "echo 'Message: ${params.Message}'"
+                    echo("Name: ${params.Name}")
+                    echo("Message: ${params.Message}")
                 }
             }
         }
